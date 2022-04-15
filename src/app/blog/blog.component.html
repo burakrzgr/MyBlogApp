@@ -1,1 +1,32 @@
-<p>blog works!</p>
+<style>
+    .blogArea{
+        padding: 0.3rem;
+        margin: 1rem;
+        background-color: rgb(206, 206, 206);
+        color: black;
+        border: 0.1rem;
+        border-radius: 0.25rem;
+        border-color: black;
+    }
+
+    .textArea{
+        margin-top:0.3rem;
+        padding: 1rem;
+        background-color: rgb(253, 253, 253);
+        color: black;
+        border: 0.1rem;
+        border-radius: 0.25rem;
+    }
+
+</style>
+
+<div *ngIf="blogService.blogs.length">
+    <h2>Blogs</h2>
+    <div *ngFor="let blog of blogService.blogs" class="blogArea">
+        <div>#{{blog.id}} - <span style="text-decoration: underline;">{{blog.author}}</span></div>
+        <div class="textArea">{{blog.text}}</div>
+    </div>
+  </div>
+
+
+  
