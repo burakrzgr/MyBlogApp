@@ -1,5 +1,5 @@
 <style>
-    .blogArea{
+    .blogArea {
         padding: 0.3rem;
         margin: 1rem;
         background-color: rgb(206, 206, 206);
@@ -9,8 +9,8 @@
         border-color: black;
     }
 
-    .textArea{
-        margin-top:0.3rem;
+    .textArea {
+        margin-top: 0.3rem;
         padding: 1rem;
         background-color: rgb(253, 253, 253);
         color: black;
@@ -18,15 +18,32 @@
         border-radius: 0.25rem;
     }
 
+    .content {
+        display: flex;
+        margin: 82px auto 32px;
+        padding: 0 16px;
+        max-width: 960px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .header{
+        padding-bottom: 1rem;
+        font-weight: bold;
+        font-size: large;
+    }
+    h2{
+        padding-left: 2rem;
+    }
 </style>
 
-<div *ngIf="blogService.blogs.length">
-    <h2>Blogs</h2>
-    <div *ngFor="let blog of blogService.blogs" class="blogArea">
-        <div>#{{blog.id}} - <span style="text-decoration: underline;">{{blog.author}}</span></div>
-        <div class="textArea">{{blog.text}}</div>
+<div class="content">
+    <div *ngIf="blogService.blogs.length">
+        <h2>Blogs</h2>
+        <div *ngFor="let blog of blogService.blogs" class="blogArea">
+            <div>#{{blog.id}} - <span style="text-decoration: underline;">{{blog.author}}</span></div>
+            <div class="textArea">
+                <div class="header">{{blog.header}}</div>
+                <div>{{blog.text}}</div></div>
+        </div>
     </div>
-  </div>
-
-
-  
+</div>
