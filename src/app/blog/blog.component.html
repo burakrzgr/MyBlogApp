@@ -65,6 +65,7 @@
                     <div *ngFor="let comment of blog.comments.list">
                         <div>{{comment.writer}}</div>
                         <div>{{comment.text}}</div>
+                        <mat-divider></mat-divider>
                     </div>
                     <div (click)="openComment(blog.id);" class="read-comment noselect">Read {{blog.comments.displayCount??0}} Comments</div>
                     <mat-progress-bar *ngIf="blog.comments.loading" mode="indeterminate"></mat-progress-bar>
