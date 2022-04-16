@@ -62,7 +62,7 @@
                     </div>
                 </mat-card-actions>
                 <mat-card-footer >
-                    <div (click)="openComment(blog.id);" class="read-comment noselect">Read {{blog.comments.displayCount}} Comments</div>
+                    <div (click)="openComment(blog.id);" class="read-comment noselect">Read {{blog.comments.displayCount??0}} Comments</div>
                     <mat-progress-bar *ngIf="blog.comments.loading" mode="indeterminate"></mat-progress-bar>
                 </mat-card-footer>
             </mat-card> 
