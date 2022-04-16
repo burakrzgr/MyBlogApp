@@ -44,7 +44,7 @@
         <h2>Blogs</h2>
         <div *ngFor="let blog of blogService.blogs" class="card">
             <mat-card> 
-                <mat-card-title class="spread">{{blog.header}} <span style="font-size: smaller;">Blog #{{blog.id}}</span></mat-card-title>
+                <mat-card-title class="spread">{{blog.header}} <span style="font-size: smaller;color: #737373;">Blog #{{blog.id}}</span></mat-card-title>
                 <mat-card-subtitle>Author : <u>{{blog.author}}</u></mat-card-subtitle>
                 <mat-card-content [innerText]="blog.text" class="innerContent"></mat-card-content>
                 <mat-card-actions>
