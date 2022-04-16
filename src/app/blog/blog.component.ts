@@ -19,7 +19,7 @@ export class BlogComponent implements OnInit {
       if( x.id === id){
         x.comments.loading = true;
         setTimeout(()=>{ 
-          x.comments.displayCount = (x.comments.displayCount??0) + 5;
+          x.comments.displayCount = (x.comments.displayCount??0) + 3;
           x.comments.loading = false;
         }, 1500);
       } 
