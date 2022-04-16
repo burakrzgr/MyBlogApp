@@ -51,7 +51,6 @@
                     <button mat-raised-button color="primary">LIKE</button>
                     <button mat-raised-button color="accent">SHARE</button>
                     <button mat-raised-button color="accent" (click)="newComment(blog.id);">COMMENT</button>
-
                     <form *ngIf="blog.comments.enterNew??false">
                         <mat-form-field class="formstyle" appearance="fill">
                         <mat-label>Leave a comment</mat-label>
