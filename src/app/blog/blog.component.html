@@ -27,6 +27,10 @@
     h2{
         padding-left: 2rem;
     }
+    .innerContent{
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+    }
 </style>
 
 <div class="content">
@@ -36,7 +40,7 @@
             <mat-card> 
                 <mat-card-title class="spread">{{blog.header}} <span style="font-size: smaller;">Blog #{{blog.id}}</span></mat-card-title>
                 <mat-card-subtitle>Author : <u>{{blog.author}}</u></mat-card-subtitle>
-                <mat-card-content>{{blog.text}}</mat-card-content>
+                <mat-card-content [innerText]="blog.text" class="innerContent"></mat-card-content>
                 <mat-card-actions>
                     <button mat-raised-button color="primary">LIKE</button>
                     <button mat-raised-button color="accent">SHARE</button>
