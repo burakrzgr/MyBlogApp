@@ -18,7 +18,7 @@ export class BlogComponent implements OnInit {
       x.comments.loading = x.id === id ? true : x.comments.loading;
     });
   }
-  closeComment() {
+  closeNewComment() {
     this.blogService.blogs.forEach(x => {
       x.comments.enterNew = false;
     });
@@ -33,6 +33,6 @@ export class BlogComponent implements OnInit {
     this.blogService.blogs.forEach(x => {
       x.id === id ?? x.comments.list?.push({ text: text, writer: "Burak", submitDate: new Date() });
     });
-    this.closeComment();
+    this.closeNewComment();
   }
 }
