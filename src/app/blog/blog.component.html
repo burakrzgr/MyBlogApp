@@ -65,8 +65,8 @@
                     <div *ngIf="(blog.comments.displayCount??0)>0">
                         <mat-divider></mat-divider>
                         <div *ngFor="let comment of blog.comments.list">
-                            <div style="width: 5rem;">{{comment.writer}}</div>
-                            <span>{{comment.text}}</span>
+                            <div color="primary">{{comment.writer}} - {{comment.submitDate}}</div>
+                            <div>{{comment.text}}</div>
                         </div>
                     </div>
                     <div (click)="openComment(blog.id);" class="read-comment noselect">Read {{blog.comments.displayCount??0}} Comments</div>
