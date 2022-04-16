@@ -17,8 +17,10 @@ export class BlogComponent implements OnInit {
     this.blogService.blogs.forEach(x => {
       x.comments.loading = x.id === id ? true: x.comments.loading ;
     });
-    console.log('clicked:'+id);
-
   }
-
+  newComment(id : number){
+    this.blogService.blogs.forEach(x => {
+      x.comments.enterNew = x.id === id ? !x.comments.enterNew: false;
+    });
+  }
 }

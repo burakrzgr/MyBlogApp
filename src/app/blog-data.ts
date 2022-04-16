@@ -7,7 +7,8 @@ export interface BlogData {
     text? : string;
     imagePath?: string;
     comments:{
-     loading:boolean,
+     enterNew?:boolean;
+     loading:boolean;
      list? : string[] 
     }
   }

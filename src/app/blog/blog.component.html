@@ -31,6 +31,12 @@
         margin-bottom: 2rem;
         margin-top: 2rem;
     }
+    .formstyle{
+        width: 100%;
+        margin-top: 1rem;
+        margin-bottom: 0rem;
+        padding-bottom: 0rem;
+    }
 </style>
 
 <div class="content">
@@ -44,7 +50,14 @@
                 <mat-card-actions>
                     <button mat-raised-button color="primary">LIKE</button>
                     <button mat-raised-button color="accent">SHARE</button>
-                    <button mat-raised-button color="accent">COMMENT</button>
+                    <button mat-raised-button color="accent" (click)="newComment(blog.id);">COMMENT</button>
+
+                    <form *ngIf="blog.comments.enterNew??false">
+                        <mat-form-field class="formstyle" appearance="fill">
+                        <mat-label>Leave a comment</mat-label>
+                        <textarea matInput placeholder="Yeah it was good post or is it !?.."></textarea>
+                        </mat-form-field>
+                    </form>
                 </mat-card-actions>
                 <mat-card-footer >
                     <div (click)="openComment(blog.id);" class="read-comment noselect">Read 999 Comments</div>
