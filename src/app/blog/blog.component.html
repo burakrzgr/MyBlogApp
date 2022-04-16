@@ -1,23 +1,4 @@
 <style>
-    .blogArea {
-        padding: 0.3rem;
-        margin: 1rem;
-        background-color: rgb(206, 206, 206);
-        color: black;
-        border: 0.1rem;
-        border-radius: 0.25rem;
-        border-color: black;
-    }
-
-    .textArea {
-        margin-top: 0.3rem;
-        padding: 1rem;
-        background-color: rgb(253, 253, 253);
-        color: black;
-        border: 0.1rem;
-        border-radius: 0.25rem;
-    }
-
     .content {
         display: flex;
         margin: 82px auto 32px;
@@ -26,10 +7,8 @@
         flex-direction: column;
         align-items: center;
     }
-    .header{
-        padding-bottom: 1rem;
-        font-weight: bold;
-        font-size: large;
+    .card{
+        margin-bottom: 2rem;
     }
     h2{
         padding-left: 2rem;
@@ -39,11 +18,17 @@
 <div class="content">
     <div *ngIf="blogService.blogs.length">
         <h2>Blogs</h2>
-        <div *ngFor="let blog of blogService.blogs" class="blogArea">
-            <div>#{{blog.id}} - <span style="text-decoration: underline;">{{blog.author}}</span></div>
-            <div class="textArea">
-                <div class="header">{{blog.header}}</div>
-                <div>{{blog.text}}</div></div>
+        <div *ngFor="let blog of blogService.blogs" class="card">
+            <mat-card> 
+                <mat-card-title>{{blog.header}} <span >#{{blog.id}}</span></mat-card-title>
+                <mat-card-subtitle>Author : <u>{{blog.author}}</u></mat-card-subtitle>
+                <mat-card-content>{{blog.text}}</mat-card-content>
+                <mat-card-actions>
+                    <button mat-raised-button color="primary">LIKE</button>
+                    <button mat-raised-button color="accent">SHARE</button>
+                    <button mat-raised-button color="accent">COMMENT</button>
+                </mat-card-actions>
+            </mat-card> 
         </div>
     </div>
 </div>
