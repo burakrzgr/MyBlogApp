@@ -62,10 +62,12 @@
                     </div>
                 </mat-card-actions>
                 <mat-card-footer >
-                    <div *ngFor="let comment of blog.comments.list">
-                        <div>{{comment.writer}}</div>
-                        <div>{{comment.text}}</div>
+                    <div *ngIf="(blog.comments.displayCount??0)>0">
                         <mat-divider></mat-divider>
+                        <div *ngFor="let comment of blog.comments.list">
+                            <div style="width: 5rem;">{{comment.writer}}</div>
+                            <span>{{comment.text}}</span>
+                        </div>
                     </div>
                     <div (click)="openComment(blog.id);" class="read-comment noselect">Read {{blog.comments.displayCount??0}} Comments</div>
                     <mat-progress-bar *ngIf="blog.comments.loading" mode="indeterminate"></mat-progress-bar>
