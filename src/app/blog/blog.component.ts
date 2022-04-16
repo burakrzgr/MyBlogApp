@@ -15,7 +15,12 @@ export class BlogComponent implements OnInit {
 
   openComment(id: number) {
     this.blogService.blogs.forEach(x => {
-      x.comments.loading = x.id === id ? true : x.comments.loading;
+      if( x.id === id){
+        x.comments.loading = true;
+        setTimeout(()=>{ 
+          x.comments.displayCount = x.comments.displayCount??0 + 5;
+        }, 3000);
+      } 
     });
   }
   closeNewComment() {
