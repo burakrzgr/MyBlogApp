@@ -6,5 +6,9 @@ export interface BlogData {
     header : string;
     text? : string;
     imagePath?: string;
+    comments:{
+     loading:boolean,
+     list? : string[] 
+    }
   }
   

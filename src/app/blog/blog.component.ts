@@ -9,8 +9,16 @@ import { BlogService } from '../blog-service';
 export class BlogComponent implements OnInit {
 
   constructor(public blogService: BlogService) {}
+ 
+  ngOnInit(): void { 
+  }
 
-  ngOnInit(): void {
+  openComment(id : number){
+    this.blogService.blogs.forEach(x => {
+      x.comments.loading = x.id === id ? true: x.comments.loading ;
+    });
+    console.log('clicked:'+id);
+
   }
 
 }

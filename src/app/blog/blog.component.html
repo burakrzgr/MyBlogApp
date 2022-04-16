@@ -7,8 +7,22 @@
         flex-direction: column;
         align-items: center;
     }
+    .read-comment {
+        padding-left: 0.5rem;
+        margin-bottom: 5px;
+        text-decoration: underline;
+        width: fit-content;
+    }
     .card{
         margin-bottom: 2rem;
+    }
+    .noselect {
+        user-select: none; 
+        cursor: pointer;
+    }
+    .spread{        
+        display: flex;
+        justify-content: space-between;
     }
     h2{
         padding-left: 2rem;
@@ -20,7 +34,7 @@
         <h2>Blogs</h2>
         <div *ngFor="let blog of blogService.blogs" class="card">
             <mat-card> 
-                <mat-card-title>{{blog.header}} <span >#{{blog.id}}</span></mat-card-title>
+                <mat-card-title class="spread">{{blog.header}} <span style="font-size: smaller;">Blog #{{blog.id}}</span></mat-card-title>
                 <mat-card-subtitle>Author : <u>{{blog.author}}</u></mat-card-subtitle>
                 <mat-card-content>{{blog.text}}</mat-card-content>
                 <mat-card-actions>
@@ -28,6 +42,10 @@
                     <button mat-raised-button color="accent">SHARE</button>
                     <button mat-raised-button color="accent">COMMENT</button>
                 </mat-card-actions>
+                <mat-card-footer >
+                    <div (click)="openComment(blog.id);" class="read-comment noselect">Read 999 Comments</div>
+                    <mat-progress-bar *ngIf="blog.comments.loading" mode="indeterminate"></mat-progress-bar>
+                </mat-card-footer>
             </mat-card> 
         </div>
     </div>
