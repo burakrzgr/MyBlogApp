@@ -51,15 +51,15 @@
                     <button mat-raised-button color="primary">LIKE</button>
                     <button mat-raised-button color="accent">SHARE</button>
                     <button mat-raised-button color="accent" (click)="newComment(blog.id);">COMMENT</button>
-                    <form *ngIf="blog.comments.enterNew??false">
+                    <div *ngIf="blog.comments.enterNew??false">
                         <mat-form-field class="formstyle" appearance="fill">
                         <mat-label>Leave a comment</mat-label>
-                        <textarea matInput placeholder="Yeah it was good post or is it !?.."></textarea>
+                        <textarea matInput placeholder="Yeah it was good post or is it !?.." #commentInput></textarea>
                         </mat-form-field>
-                        <div  style="display:flex; justify-content:end;">
-                            <button mat-raised-button color="warn">Send Your Comment</button>
+                        <div style="display:flex; justify-content:end;">
+                            <button mat-raised-button color="warn" (click)="onSubmitComment(blog.id,commentInput.value)">Send Your Comment</button>
                         </div>
-                    </form>
+                    </div>
                 </mat-card-actions>
                 <mat-card-footer >
                     <div (click)="openComment(blog.id);" class="read-comment noselect">Read 999 Comments</div>

@@ -8,19 +8,31 @@ import { BlogService } from '../blog-service';
 })
 export class BlogComponent implements OnInit {
 
-  constructor(public blogService: BlogService) {}
- 
-  ngOnInit(): void { 
+  constructor(public blogService: BlogService) { }
+
+  ngOnInit(): void {
   }
 
-  openComment(id : number){
+  openComment(id: number) {
     this.blogService.blogs.forEach(x => {
-      x.comments.loading = x.id === id ? true: x.comments.loading ;
+      x.comments.loading = x.id === id ? true : x.comments.loading;
     });
   }
-  newComment(id : number){
+  closeComment() {
     this.blogService.blogs.forEach(x => {
-      x.comments.enterNew = x.id === id ? !x.comments.enterNew: false;
+      x.comments.enterNew = false;
     });
+  }
+  newComment(id: number) {
+    this.blogService.blogs.forEach(x => {
+      x.comments.enterNew = x.id === id ? !x.comments.enterNew : false;
+    });
+  }
+
+  onSubmitComment(id: number, text: string): void {
+    this.blogService.blogs.forEach(x => {
+      x.id === id ?? x.comments.list?.push({ text: text, writer: "Burak", submitDate: new Date() });
+    });
+    this.closeComment();
   }
 }
