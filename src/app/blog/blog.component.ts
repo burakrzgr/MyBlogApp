@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogService } from '../blog-service';
+import { formatDate } from "@angular/common";
 
 @Component({
   selector: 'app-blog',
@@ -19,7 +20,8 @@ export class BlogComponent implements OnInit {
         x.comments.loading = true;
         setTimeout(()=>{ 
           x.comments.displayCount = (x.comments.displayCount??0) + 5;
-        }, 1000);
+          x.comments.loading = false;
+        }, 1500);
       } 
     });
   }
@@ -36,8 +38,12 @@ export class BlogComponent implements OnInit {
 
   onSubmitComment(id: number, text: string): void {
     this.blogService.blogs.forEach(x => {
-      x.id === id ?? x.comments.list?.push({ text: text, writer: "Burak", submitDate: new Date() });
+      if(x.id === id) 
+        x.comments.list?.push({ text: text, writer: "Burak", submitDate: new Date() });
     });
     this.closeNewComment();
+  }
+  formatThisDate(value: Date, format: string):string{
+    return formatDate(value,format,'en-US')
   }
 }

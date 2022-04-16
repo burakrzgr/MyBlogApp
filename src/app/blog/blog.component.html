@@ -7,35 +7,57 @@
         flex-direction: column;
         align-items: center;
     }
+
     .read-comment {
+        padding-top: 0.5rem;
         padding-left: 0.5rem;
         margin-bottom: 5px;
         text-decoration: underline;
         width: fit-content;
     }
-    .card{
+
+    .card {
         margin-bottom: 2rem;
     }
+
     .noselect {
-        user-select: none; 
+        user-select: none;
         cursor: pointer;
     }
-    .spread{        
+
+    .spread {
         display: flex;
         justify-content: space-between;
     }
-    h2{
+
+    h2 {
         padding-left: 2rem;
     }
-    .innerContent{
+
+    .innerContent {
         margin-bottom: 2rem;
         margin-top: 2rem;
     }
-    .formstyle{
+
+    .formstyle {
         width: 100%;
         margin-top: 1rem;
         margin-bottom: 0rem;
         padding-bottom: 0rem;
+    }
+
+    .text-primary {
+        color: #ea2474;
+        font-weight: 500;
+        font-size: larger;
+    }
+
+    .comment-header {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        color: #b0bec5;
+        font-weight: 500;
+        font-size: large;
     }
 </style>
 
@@ -43,8 +65,9 @@
     <div *ngIf="blogService.blogs.length">
         <h2>Blogs</h2>
         <div *ngFor="let blog of blogService.blogs" class="card">
-            <mat-card> 
-                <mat-card-title class="spread">{{blog.header}} <span style="font-size: smaller;color: #737373;">Blog #{{blog.id}}</span></mat-card-title>
+            <mat-card>
+                <mat-card-title class="spread">{{blog.header}} <span style="font-size: smaller;color: #737373;">Blog
+                        #{{blog.id}}</span></mat-card-title>
                 <mat-card-subtitle>Author : <u>{{blog.author}}</u></mat-card-subtitle>
                 <mat-card-content [innerText]="blog.text" class="innerContent"></mat-card-content>
                 <mat-card-actions>
@@ -53,26 +76,34 @@
                     <button mat-raised-button color="accent" (click)="newComment(blog.id);">COMMENT</button>
                     <div *ngIf="blog.comments.enterNew??false">
                         <mat-form-field class="formstyle" appearance="fill">
-                        <mat-label>Leave a comment</mat-label>
-                        <textarea matInput placeholder="Yeah it was good post or is it !?.." #commentInput></textarea>
+                            <mat-label>Leave a comment</mat-label>
+                            <textarea matInput placeholder="Yeah it was good post or is it !?.."
+                                #commentInput></textarea>
                         </mat-form-field>
                         <div style="display:flex; justify-content:end;">
-                            <button mat-raised-button color="warn" (click)="onSubmitComment(blog.id,commentInput.value)">Send Your Comment</button>
+                            <button mat-raised-button color="warn"
+                                (click)="onSubmitComment(blog.id,commentInput.value)">Send Your Comment</button>
                         </div>
                     </div>
                 </mat-card-actions>
-                <mat-card-footer >
-                    <div *ngIf="(blog.comments.displayCount??0)>0">
+                <mat-card-footer>
+                    <div *ngIf="(blog.comments.displayCount??0)>0" style="margin-left: 0.5rem;">
                         <mat-divider></mat-divider>
+                        <div class="comment-header">Comments</div>
                         <div *ngFor="let comment of blog.comments.list">
-                            <div color="primary">{{comment.writer}} - {{comment.submitDate}}</div>
-                            <div>{{comment.text}}</div>
+                            <div><span class="text-primary">{{comment.writer}}</span> -
+                                {{comment.submitDate?formatThisDate(comment.submitDate,'dd/MM/yyyy HH:mm'):'Unknown date'}}</div>
+                            <div style="margin-top: 0.5rem;margin-bottom: 0.2rem;">{{comment.text}}</div>
+                            <mat-divider></mat-divider>
                         </div>
                     </div>
-                    <div (click)="openComment(blog.id);" class="read-comment noselect">Read {{blog.comments.displayCount??0}} Comments</div>
+                    <div *ngIf="(blog.comments.list?.length??0) > (blog.comments.displayCount??0)">
+                        <div (click)="openComment(blog.id);" class="read-comment noselect">Read
+                            {{(blog.comments.list?.length??0) - (blog.comments.displayCount??0)}} Comments</div>
+                    </div>
                     <mat-progress-bar *ngIf="blog.comments.loading" mode="indeterminate"></mat-progress-bar>
                 </mat-card-footer>
-            </mat-card> 
+            </mat-card>
         </div>
     </div>
 </div>
