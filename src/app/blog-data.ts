@@ -1,3 +1,4 @@
+import { CommentData } from "./comment-data";
 
 export interface BlogData {
     id: number;
@@ -6,10 +7,6 @@ export interface BlogData {
     header : string;
     text? : string;
     imagePath?: string;
-    comments:{
-     enterNew?:boolean;
-     loading:boolean;
-     list? : string[] 
-    }
+    comments: CommentData
   }
   
