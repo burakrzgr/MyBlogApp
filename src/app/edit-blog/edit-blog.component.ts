@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BlogService } from '../blog-service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { BlogData } from '../blog-data';
 
 @Component({
   selector: 'app-edit-blog',
@@ -9,7 +10,7 @@ import { Location } from '@angular/common';
   styleUrls: ['./edit-blog.component.sass']
 })
 export class EditBlogComponent implements OnInit {
-
+  blog: BlogData | undefined;
   constructor(
     private route: ActivatedRoute,
     public blogService: BlogService) { }
@@ -20,8 +21,7 @@ export class EditBlogComponent implements OnInit {
 
   getBlog(): void {
     const id = parseInt(this.route.snapshot.paramMap.get('id')!, 0);
-    this.blogService.getBlog(id);
-     // .subscribe(hero => this.hero = hero);
+    this.blog = this.blogService.get(id);
   }
 
 }

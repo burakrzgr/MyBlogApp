@@ -14,4 +14,8 @@ export class BlogService {
   clear() {
     this.blogs = [];
   }
+  get(id:number):BlogData{
+    return this.blogs.filter(x => {return(x.id === id)})[0];
+  }
+  
 }
