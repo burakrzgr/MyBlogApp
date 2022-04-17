@@ -31,17 +31,13 @@ export class BlogComponent implements OnInit {
       x.comments.enterNew = false;
     });
   }
-  newComment(id: number) {
-    this.blogService.blogs.forEach(x => {
-      x.comments.enterNew = x.id === id ? !x.comments.enterNew : false;
-    });
+  newComment(blog: BlogData) {
+    this.closeNewComment();
+    blog.comments.enterNew = !blog.comments.enterNew;
   }
 
-  onSubmitComment(id: number, text: string): void {
-    this.blogService.blogs.forEach(x => {
-      if(x.id === id) 
-        x.comments.list?.push({ text: text, writer: "Burak", submitDate: new Date() });
-    });
+  onSubmitComment(blog: BlogData, text: string): void {
+    blog.comments.list?.push({ text: text, writer: "Burak", submitDate: new Date() });
     this.closeNewComment();
   }
   formatThisDate(value: Date, format: string):string{

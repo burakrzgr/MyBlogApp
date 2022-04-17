@@ -16,7 +16,7 @@
                     <button mat-raised-button color="primary"
                         (click)="likeBlog(blog)">LIKE</button>
                     <button mat-raised-button color="accent">SHARE</button>
-                    <button mat-raised-button color="accent" (click)="newComment(blog.id);">COMMENT</button>
+                    <button mat-raised-button color="accent" (click)="newComment(blog);">COMMENT</button>
                     <div *ngIf="blog.comments.enterNew??false">
                         <mat-form-field class="formstyle" appearance="fill">
                             <mat-label>Leave a comment</mat-label>
@@ -24,7 +24,7 @@
                         </mat-form-field>
                         <div style="display:flex; justify-content:end;">
                             <button mat-raised-button color="warn"
-                                (click)="onSubmitComment(blog.id,commentInput.value)">Send Your Comment</button>
+                                (click)="onSubmitComment(blog,commentInput.value)">Send Your Comment</button>
                         </div>
                     </div>
                 </mat-card-actions>
