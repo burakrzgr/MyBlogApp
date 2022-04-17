@@ -7,6 +7,8 @@ export interface BlogData {
     header : string;
     text? : string;
     imagePath?: string;
+    likes : number;
+    views : number;
     comments: CommentData
   }
   

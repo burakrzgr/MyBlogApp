@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogService } from '../blog-service';
 import { formatDate } from "@angular/common";
+import { BlogData } from '../blog-data';
 
 @Component({
   selector: 'app-blog',
@@ -45,5 +46,8 @@ export class BlogComponent implements OnInit {
   }
   formatThisDate(value: Date, format: string):string{
     return formatDate(value,format,'en-US')
+  }
+  likeBlog(blog: BlogData){
+    blog.likes++;
   }
 }
