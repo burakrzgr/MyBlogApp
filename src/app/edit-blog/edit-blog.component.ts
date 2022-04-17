@@ -19,7 +19,7 @@ export class EditBlogComponent implements OnInit {
   }
 
   getBlog(): void {
-    const id = parseInt(this.route.snapshot.paramMap.get('id')!, 10);
+    const id = parseInt(this.route.snapshot.paramMap.get('id')!, 0);
     this.blogService.getBlog(id);
      // .subscribe(hero => this.hero = hero);
   }
