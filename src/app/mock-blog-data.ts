@@ -2,7 +2,7 @@ import { BlogData } from './blog-data';
 
 export const WrittenBlogs: BlogData[] = [
   {
-    id: 1, author: 'Burak', entryDate: new Date(), header: "About My New Angular App", likes : 13, views : 69,
+    id: 1, author: 'Burak', entryDate: new Date(), header: "About My New Angular App", likes : 13, views : 71,
     text: "Hello everyone!\n\nAs you can already see i am trying to learn angular and also trying to do some blog web site, why blog because you can add edit and delete blogs and other people can easly see what you did. As far as i see angular is relatively hard to learn when compared to react. Maybe its just because of me that learned react first then compared it to angular or maybe not.\nHowever once you learned basic of the framework you can easily start to work on things.\nStay tuned for more information.\nCurrent state of the blog is i can view pre-defined blogs and see pre-defined comments. 3 comment for every \"read comment\" clicking. Also you can enter new comment. Likes and views is pre-defined now can't be changed.\n\n🥳 Now like button working. Likes are not persistent though.\n\n\nLike subscribe and leave a comment.\nHave nice day!!",
     comments: { loading: false, list: [
       { writer: "Biri", text: "Saçma!", submitDate: new Date('07 March 2022 19:22:30 GMT')}, 
@@ -25,7 +25,7 @@ export const WrittenBlogs: BlogData[] = [
         { writer: "Burak", text: "Canilik ya",submitDate: new Date('24 Feb 2022 23:45:30 GMT')},
     ]}
   },
-  { id: 4, author: 'Legend', entryDate: new Date(), header: "About me", likes : 1, views : 56,
+  { id: 4, author: 'Legend', entryDate: new Date(), header: "About me", likes : 1, views : 69,
     text: "Yes you heard right! I am legend. Do you have any further question?\nWrite down below.", comments: { loading: false, list: [] } 
   },
   { id: 5, author: 'Silent_watcher', entryDate: new Date(), header: "When Quiet guy had it enought....", likes : 3, views : 76,
