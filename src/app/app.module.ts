@@ -14,13 +14,15 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDividerModule } from '@angular/material/divider';
 import { NewBlogComponent } from './new-blog/new-blog.component';
 import { MatIconModule } from '@angular/material/icon';
+import { EditBlogComponent } from './edit-blog/edit-blog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BlogComponent,
     SplashComponent,
-    NewBlogComponent
+    NewBlogComponent,
+    EditBlogComponent
   ],
   imports: [
     BrowserModule,
