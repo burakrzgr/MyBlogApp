@@ -12,4 +12,8 @@ export class NewBlogComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSubmitBlog(title: string, content: string): void {
+
+  }
+
 }

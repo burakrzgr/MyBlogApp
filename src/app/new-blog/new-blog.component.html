@@ -24,6 +24,10 @@
                 <mat-label>Enter the content here</mat-label>
                 <textarea matInput placeholder="Enter Here" autocomplete="on" rows="10" #newblogcontent ></textarea>
             </mat-form-field>
+            <div style="display:flex; justify-content:end;">
+            <button mat-raised-button color="warn"
+                (click)="onSubmitBlog(newblogtitle.value,newblogcontent.value)">Publish this Blog Post</button>
+            </div>
         </mat-card-content>
     </mat-card>
 </div>
