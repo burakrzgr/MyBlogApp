@@ -1,1 +1,29 @@
-<p>new-blog works!</p>
+<style>
+    h3 {
+        margin-bottom: 0px;
+    }
+    h1{
+        font-weight: 600;
+        color: #c2185b;
+    }
+</style>
+<div class="content">
+    <mat-card style="width: 100%;">
+        <mat-card-title>
+            <h1>Enter New Blog</h1>
+        </mat-card-title>
+        <mat-card-content>
+            <h3 style="margin-top: 0.5rem;">Title</h3>
+            <mat-form-field class="formstyle">
+                <mat-label>Enter title of the post</mat-label>
+                <input matInput placeholder="Enter Here" #newblogtitle />
+                <mat-icon matSuffix>receipt_long</mat-icon>
+            </mat-form-field>
+            <h4 style="margin-top: 0.5rem;">Content</h4>
+            <mat-form-field class="formstyle" color="warn" appearance="outline">
+                <mat-label>Enter the content here</mat-label>
+                <textarea matInput placeholder="Enter Here" autocomplete="on" rows="10" #newblogcontent ></textarea>
+            </mat-form-field>
+        </mat-card-content>
+    </mat-card>
+</div>

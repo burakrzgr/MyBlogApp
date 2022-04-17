@@ -5,11 +5,12 @@ export const WrittenBlogs: BlogData[] = [
     id: 1, author: 'Burak', entryDate: new Date(), header: "About My New Angular App", likes : 13, views : 71,
     text: "Hello everyone!\n\nAs you can already see i am trying to learn angular and also trying to do some blog web site, why blog because you can add edit and delete blogs and other people can easly see what you did. As far as i see angular is relatively hard to learn when compared to react. Maybe its just because of me that learned react first then compared it to angular or maybe not.\nHowever once you learned basic of the framework you can easily start to work on things.\nStay tuned for more information.\nCurrent state of the blog is i can view pre-defined blogs and see pre-defined comments. 3 comment for every \"read comment\" clicking. Also you can enter new comment. Likes and views is pre-defined now can't be changed.\n\n🥳 Now like button working. Likes are not persistent though.\n\n\nLike subscribe and leave a comment.\nHave nice day!!",
     comments: { loading: false, list: [
-      { writer: "Biri", text: "Saçma!", submitDate: new Date('07 March 2022 19:22:30 GMT')}, 
+      { writer: "Biri", text: "Saçma!", submitDate: new Date('07 March 2022 19:42:30 GMT')}, 
       { writer: "Burak", text: "Mantıklı!",submitDate: new Date('24 Feb 2022 9:15:30 GMT')},
+      { writer: "Silent_watcher", text: "boşşş",submitDate: new Date('28 Feb 2022 14:18:30 GMT')},
       { writer: "Burak", text: "Yaptıklarım yapacaklarıomın garantisidir.. ghgsdfsgh",submitDate: new Date('8 March 2022 21:10:00 GMT')},
       { writer: "Legend", text: "Amaç???",submitDate: new Date('8 March 2022 21:12:00 GMT')},
-      { writer: "Narco", text: "Amaç ne",submitDate: new Date('13 March 2022 12:15:00 GMT')},
+      { writer: "Narco", text: "Çok iyi",submitDate: new Date('13 March 2022 12:15:00 GMT')},
       { writer: "Pokemon trainer", text: "Arkadaşlar ben anlamadım amaç ne şimdi",submitDate: new Date('4 Apr 2022 17:42:00 GMT')},
       { writer: "Silent_watcher", text: "@Pokemon_trainer Boş işte",submitDate: new Date('5 Feb 2022 16:36:00 GMT')},
       { writer: "Burak", text: "cahiller 😭😭😭",submitDate: new Date('5 Feb 2022 18:03:00 GMT')}

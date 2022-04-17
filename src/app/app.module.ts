@@ -13,6 +13,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDividerModule } from '@angular/material/divider';
 import { NewBlogComponent } from './new-blog/new-blog.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { NewBlogComponent } from './new-blog/new-blog.component';
     MatProgressBarModule,
     MatInputModule,
     MatExpansionModule,
-    MatDividerModule
+    MatDividerModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
