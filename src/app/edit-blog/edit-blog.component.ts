@@ -24,4 +24,10 @@ export class EditBlogComponent implements OnInit {
     this.blog = this.blogService.get(id);
   }
 
+  onUpdateBlog(title: string, content: string, blog?: BlogData): void {
+    if (!blog) return;
+    blog.header = title;
+    blog.text = content;
+  }
+
 }
