@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { BlogService } from '../blog-service';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-edit-blog',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditBlogComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    public blogService: BlogService) { }
 
   ngOnInit(): void {
+    this.getBlog();
+  }
+
+  getBlog(): void {
+    const id = parseInt(this.route.snapshot.paramMap.get('id')!, 10);
+    this.blogService.getBlog(id);
+     // .subscribe(hero => this.hero = hero);
   }
 
 }
