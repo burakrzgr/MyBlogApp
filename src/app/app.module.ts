@@ -15,6 +15,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { NewBlogComponent } from './new-blog/new-blog.component';
 import { MatIconModule } from '@angular/material/icon';
 import { EditBlogComponent } from './edit-blog/edit-blog.component';
+import { EditBlogListComponent } from './edit-blog-list/edit-blog-list.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { EditBlogComponent } from './edit-blog/edit-blog.component';
     BlogComponent,
     SplashComponent,
     NewBlogComponent,
-    EditBlogComponent
+    EditBlogComponent,
+    EditBlogListComponent
   ],
   imports: [
     BrowserModule,
