@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BlogService } from '../blog-service';
 
 @Component({
   selector: 'app-new-blog',
@@ -7,13 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewBlogComponent implements OnInit {
 
-  constructor() { }
+  constructor(public blogService: BlogService) { }
 
   ngOnInit(): void {
   }
 
   onSubmitBlog(title: string, content: string): void {
-
+    this.blogService.add({ author: "Burak", comments: { loading: false, enterNew: false, displayCount: 0, list: [] }, entryDate: new Date(), header: title, id: 99, likes: 0, views: 0, text: content })
   }
 
 }
