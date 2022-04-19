@@ -1,1 +1,7 @@
-<p>edit-blog-list works!</p>
+<div *ngFor="let blog of blogService.blogs" class="card">
+    <div>{{blog.header}} - {{blog.text?.substring(0,100)}}...
+        <button mat-raised-button color="primary" (click)="goToEdit(blog)">Edit</button>
+    </div>
+</div>
+
+
