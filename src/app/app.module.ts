@@ -16,6 +16,7 @@ import { NewBlogComponent } from './new-blog/new-blog.component';
 import { MatIconModule } from '@angular/material/icon';
 import { EditBlogComponent } from './edit-blog/edit-blog.component';
 import { EditBlogListComponent } from './edit-blog-list/edit-blog-list.component';
+import { EditOptionComponent } from './edit-option/edit-option.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { EditBlogListComponent } from './edit-blog-list/edit-blog-list.component
     SplashComponent,
     NewBlogComponent,
     EditBlogComponent,
-    EditBlogListComponent
+    EditBlogListComponent,
+    EditOptionComponent
   ],
   imports: [
     BrowserModule,

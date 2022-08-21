@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EditBlogListComponent } from './edit-blog-list.component';
+import { EditOptionComponent } from '../edit-option/edit-option.component';
+
 
 describe('EditBlogListComponent', () => {
   let component: EditBlogListComponent;
