@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injectable, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BlogData } from '../blog-data';
 
@@ -8,12 +8,16 @@ import { BlogData } from '../blog-data';
   styleUrls: ['./edit-option.component.sass']
 })
 export class EditOptionComponent implements OnInit {
-
-  constructor(public blog: BlogData,private router: Router) { }
+  @Input() blog? : BlogData;
+  
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
-  goToEdit(blog:BlogData){
-    this.router.navigateByUrl('/myblogs/'+blog.id);
+  goToEdit(blog?:BlogData){
+    if(blog != null)
+      this.router.navigateByUrl('/myblogs/'+blog.id);
+    else
+      this.router.navigateByUrl('/404');
   }
 }

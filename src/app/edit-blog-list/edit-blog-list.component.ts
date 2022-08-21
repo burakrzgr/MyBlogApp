@@ -9,13 +9,15 @@ import { BlogService } from '../blog-service';
   styleUrls: ['./edit-blog-list.component.sass']
 })
 export class EditBlogListComponent implements OnInit {
+ 
 
   constructor(public blogService: BlogService,private router: Router) { }
-
+  
   ngOnInit(): void {
   }
 
   goToEdit(blog:BlogData){
     this.router.navigateByUrl('/myblogs/'+blog.id);
   }
+  
 }
