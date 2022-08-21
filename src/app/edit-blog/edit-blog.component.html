@@ -32,7 +32,7 @@
         <mat-card-footer>
             <div *ngIf="(blog?.comments?.list?.length??0)>0" style="margin-left: 0.5rem;">
                 <mat-divider></mat-divider>
-                <div class="comment-header">There are comments</div>
+                <div class="comment-header">There are {{blog?.comments?.list?.length}} comments</div>
             </div>
         </mat-card-footer>
     </mat-card>
