@@ -18,6 +18,6 @@ export class EditOptionComponent implements OnInit {
     if(blog != null)
       this.router.navigateByUrl('/myblogs/'+blog.id);
     else
-      this.router.navigateByUrl('/404');
+      this.router.navigateByUrl('error/404');
   }
 }
