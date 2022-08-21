@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogService } from '../blog-service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { BlogData } from '../blog-data';
 
@@ -13,6 +13,7 @@ export class EditBlogComponent implements OnInit {
   blog: BlogData | undefined;
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     public blogService: BlogService) { }
 
   ngOnInit(): void {
@@ -22,6 +23,9 @@ export class EditBlogComponent implements OnInit {
   getBlog(): void {
     const id = parseInt(this.route.snapshot.paramMap.get('id')!, 0);
     this.blog = this.blogService.get(id);
+    if(this.blog == null){
+      this.router.navigateByUrl('error/404');
+    }
   }
 
   onUpdateBlog(title: string, content: string, blog?: BlogData): void {
