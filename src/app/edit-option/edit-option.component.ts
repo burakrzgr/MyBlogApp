@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { BlogData } from '../blog-data';
 
 @Component({
   selector: 'app-edit-option',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditOptionComponent implements OnInit {
 
-  constructor() { }
+  constructor(public blog: BlogData,private router: Router) { }
 
   ngOnInit(): void {
   }
-
+  goToEdit(blog:BlogData){
+    this.router.navigateByUrl('/myblogs/'+blog.id);
+  }
 }
