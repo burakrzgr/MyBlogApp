@@ -17,6 +17,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { EditBlogComponent } from './edit-blog/edit-blog.component';
 import { EditBlogListComponent } from './edit-blog-list/edit-blog-list.component';
 import { EditOptionComponent } from './edit-option/edit-option.component';
+import { NotFoundComponent } from './error/not-found/not-found.component';
+import { NoPermissionComponent } from './error/no-permission/no-permission.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { EditOptionComponent } from './edit-option/edit-option.component';
     NewBlogComponent,
     EditBlogComponent,
     EditBlogListComponent,
-    EditOptionComponent
+    EditOptionComponent,
+    NotFoundComponent,
+    NoPermissionComponent
   ],
   imports: [
     BrowserModule,
